@@ -12,7 +12,7 @@ from resources.store import Store, StoreList
 
 app = Flask(__name__)
 
-uri = os.environ['DATABASE_URL']
+uri = os.environ.get('DATABASE_URL','sqlite:///data.db')
 if uri.startswith("postgres://"):
     uri = uri.replace("postgres://", "postgresql://",1)
 #  os.environ.get('DATABASE_URL','sqlite:///data.db')
